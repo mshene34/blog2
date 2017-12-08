@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bar Plot on Mike Sheneman&#39;s Blog</title>
-    <link>https://example.org/tags/bar-plot/</link>
+    <link>https://mikesheneman.netlify.com/tags/bar-plot/</link>
     <description>Recent content in Bar Plot on Mike Sheneman&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
     <lastBuildDate>Thu, 07 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://example.org/tags/bar-plot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mikesheneman.netlify.com/tags/bar-plot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bar Plot</title>
-      <link>https://example.org/post/bar-plot/</link>
+      <link>https://mikesheneman.netlify.com/post/bar-plot/</link>
       <pubDate>Thu, 07 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/post/bar-plot/</guid>
+      <guid>https://mikesheneman.netlify.com/post/bar-plot/</guid>
       <description>library() library() library() library() </description>
     </item>
     
