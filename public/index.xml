@@ -2,23 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mike Sheneman&#39;s Blog</title>
-    <link>https://mikesheneman.netlify.com/</link>
+    <link>/</link>
     <description>Recent content on Mike Sheneman&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
     <lastBuildDate>Thu, 07 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mikesheneman.netlify.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bar Plot</title>
-      <link>https://mikesheneman.netlify.com/post/bar-plot/</link>
+      <link>/post/bar-plot/</link>
       <pubDate>Thu, 07 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mikesheneman.netlify.com/post/bar-plot/</guid>
+      <guid>/post/bar-plot/</guid>
       <description>library() library() library() library() </description>
+    </item>
+    
+    <item>
+      <title>Histogram</title>
+      <link>/post/histogram/</link>
+      <pubDate>Thu, 07 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/histogram/</guid>
+      <description></description>
     </item>
     
   </channel>
