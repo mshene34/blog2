@@ -1,0 +1,26 @@
+---
+title: Histogram
+author: Mike
+date: '2017-12-14'
+slug: histogram
+categories:
+  - R
+tags:
+  - Histogram
+---
+
+
+
+<p>Hello all! Let’s make a histogram to look at the weights of MLB players through the Master table in the Lahman database. First, install the following packages in R-Studio.</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)
+library(ggplot2)</code></pre>
+<p>After the packages are installed, it is time to extract the data with an sql request.</p>
+<pre class="r"><code>query&lt;-&quot;SELECT weight FROM Master&quot;
+result&lt;-sqldf(query)</code></pre>
+<p>After the data is extracted, it is time to visualize the data.</p>
+<pre class="r"><code>ggplot()+
+  geom_histogram(data=result,aes(x=weight),color=&quot;blue&quot;,fill=&quot;yellow&quot;,bins=50)+
+  ggtitle(&quot;Body-Weight Distribution for Baseball Players&quot;)</code></pre>
+<p><img src="/post/2017-12-14-histogram_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>There you have it, a nice polished histogram! It is important to note that bins was set to 50. Bins refers to the number of bars on the graph. The defult is 30 but it needs to be changed sometimes in order to look more polished.</p>

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Thu, 07 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/histogram/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,10 +15,13 @@
     <item>
       <title>Histogram</title>
       <link>/post/histogram/</link>
-      <pubDate>Thu, 07 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 14 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/histogram/</guid>
-      <description></description>
+      <description>Hello all! Let’s make a histogram to look at the weights of MLB players through the Master table in the Lahman database. First, install the following packages in R-Studio.
+library(Lahman) library(sqldf) library(ggplot2) After the packages are installed, it is time to extract the data with an sql request.
+query&amp;lt;-&amp;quot;SELECT weight FROM Master&amp;quot; result&amp;lt;-sqldf(query) After the data is extracted, it is time to visualize the data.
+ggplot()+ geom_histogram(data=result,aes(x=weight),color=&amp;quot;blue&amp;quot;,fill=&amp;quot;yellow&amp;quot;,bins=50)+ ggtitle(&amp;quot;Body-Weight Distribution for Baseball Players&amp;quot;) There you have it, a nice polished histogram!</description>
     </item>
     
   </channel>

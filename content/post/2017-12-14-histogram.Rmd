@@ -1,7 +1,7 @@
 ---
 title: Histogram
 author: Mike
-date: '2017-12-07'
+date: '2017-12-14'
 slug: histogram
 categories:
   - R
@@ -10,6 +10,12 @@ tags:
 ---
 
 Hello all! Let's make a histogram to look at the weights of MLB players through the Master table in the Lahman database. First, install the following packages in R-Studio.
+
+```{r message=FALSE, warning=FALSE}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
 
 After the packages are installed, it is time to extract the data with an sql request.
 
@@ -20,7 +26,7 @@ result<-sqldf(query)
 
 After the data is extracted, it is time to visualize the data.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ggplot()+
   geom_histogram(data=result,aes(x=weight),color="blue",fill="yellow",bins=50)+
   ggtitle("Body-Weight Distribution for Baseball Players")

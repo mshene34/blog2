@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
-    <lastBuildDate>Thu, 07 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,19 +15,48 @@
     <item>
       <title>Bar Plot</title>
       <link>/post/bar-plot/</link>
-      <pubDate>Thu, 07 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 14 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/bar-plot/</guid>
-      <description>library() library() library() library() </description>
+      <description>Hello all! Let’s make a bar plot to show team homerun totals for every MLB team in 1980. First, install the following packages in R-Studio.
+library(Lahman) library(sqldf) library(devtools) library(ggplot2) Now that the packages are installed, lets extract the data.
+query&amp;lt;-&amp;quot;SELECT name,HR FROM Teams WHERE yearID=1980 ORDER BY HR &amp;quot; result&amp;lt;-sqldf(query) result$name&amp;lt;-factor(result$name,levels=result$name) After that is done, it is time to visualize the data with a bar plot.
+ggplot()+ geom_bar(data=result,aes(x=name,y=HR),stat=&amp;#39;identity&amp;#39;, color=&amp;#39;blue&amp;#39;,fill=&amp;#39;black&amp;#39;)+ coord_flip()+ xlab(&amp;quot;Team Name&amp;quot;)+ ylab(&amp;quot;Homeruns&amp;quot;)+ ggtitle(&amp;quot;1980 Team Homerun Distribution&amp;quot;) There you have it!</description>
     </item>
     
     <item>
       <title>Histogram</title>
       <link>/post/histogram/</link>
-      <pubDate>Thu, 07 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 14 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/post/histogram/</guid>
-      <description></description>
+      <description>Hello all! Let’s make a histogram to look at the weights of MLB players through the Master table in the Lahman database. First, install the following packages in R-Studio.
+library(Lahman) library(sqldf) library(ggplot2) After the packages are installed, it is time to extract the data with an sql request.
+query&amp;lt;-&amp;quot;SELECT weight FROM Master&amp;quot; result&amp;lt;-sqldf(query) After the data is extracted, it is time to visualize the data.
+ggplot()+ geom_histogram(data=result,aes(x=weight),color=&amp;quot;blue&amp;quot;,fill=&amp;quot;yellow&amp;quot;,bins=50)+ ggtitle(&amp;quot;Body-Weight Distribution for Baseball Players&amp;quot;) There you have it, a nice polished histogram!</description>
+    </item>
+    
+    <item>
+      <title>Scatterplot</title>
+      <link>/post/scatterplot/</link>
+      <pubDate>Thu, 14 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/scatterplot/</guid>
+      <description>Hello all! Let’s make a scatterplot to look at career homeruns and strikeouts from players who had more than 400 homeruns. First, install the following packages in R-Studio.
+library(Lahman) library(sqldf) library(devtools) library(ggplot2) After the packages are installed, it is time to extract the data with an sql request.
+query&amp;lt;-&amp;quot;SELECT playerID,sum(HR) AS CareerHR,sum(SO) AS CareerSO FROM Batting GROUP BY playerID HAVING sum(HR)&amp;gt;400&amp;quot; result&amp;lt;-sqldf(query) After the data is extracted, it is time to visualize the data.</description>
+    </item>
+    
+    <item>
+      <title>Time Series</title>
+      <link>/post/time-series/</link>
+      <pubDate>Thu, 14 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/time-series/</guid>
+      <description>Hello all! Let’s make a time series plot by looking at Babe Ruth’s homeruns over his twenty-two seasons. First, install the following packages in R-Studio.
+library(Lahman) library(sqldf) library(devtools) library(ggplot2) After the packages are installed, it is time to extract the data with an sql request.
+query&amp;lt;-&amp;quot;SELECT yearID,HR FROM Batting WHERE playerID=&amp;#39;ruthba01&amp;#39;&amp;quot; result&amp;lt;-sqldf(query) After the data is extracted, it is time to visualize the data.
+ggplot()+ geom_point(data=result,aes(x=yearID,y=HR),color=&amp;quot;black&amp;quot;)+ geom_line(data=result,aes(x=yearID,y=HR),color=&amp;quot;blue&amp;quot;)+ ggtitle(&amp;quot;Ruth&amp;#39;s Homerun Totals Through the Years&amp;quot;)+ xlab(&amp;quot;Year&amp;quot;)+ ylab(&amp;quot;Homeruns&amp;quot;) There you have it!</description>
     </item>
     
   </channel>

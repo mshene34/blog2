@@ -1,0 +1,42 @@
+---
+title: Scatterplot
+author: Mike
+date: '2017-12-14'
+slug: scatterplot
+categories:
+  - R
+tags:
+  - Scatterplot
+---
+
+Hello all! Let's make a scatterplot to look at career homeruns and strikeouts from players who had more than 400 homeruns. First, install the following packages in R-Studio.
+
+```{r message=FALSE, warning=FALSE}
+library(Lahman)
+library(sqldf)
+library(devtools)
+library(ggplot2)
+```
+
+After the packages are installed, it is time to extract the data with an sql request.
+
+```{r message=FALSE, warning=FALSE}
+query<-"SELECT playerID,sum(HR) AS CareerHR,sum(SO) AS CareerSO
+FROM Batting
+GROUP BY playerID
+HAVING sum(HR)>400"
+result<-sqldf(query)
+```
+
+After the data is extracted, it is time to visualize the data.
+
+```{r message=FALSE, warning=FALSE}
+ggplot()+
+geom_point(data=result,aes(x=CareerSO,y=CareerHR),size=3)+
+ggtitle("Career Strikeouts and Homeruns - The Best")+
+xlab("Career Strikeouts")+
+ylab("Career Homeruns")
+```
+
+There you have it, a nice polished scatterplot!
+

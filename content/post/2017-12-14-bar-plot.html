@@ -1,0 +1,33 @@
+---
+title: Bar Plot
+author: Mike
+date: '2017-12-14'
+slug: bar-plot
+categories:
+  - R
+tags:
+  - Bar Plot
+---
+
+
+
+<p>Hello all! Let’s make a bar plot to show team homerun totals for every MLB team in 1980. First, install the following packages in R-Studio.</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)
+library(devtools)
+library(ggplot2)</code></pre>
+<p>Now that the packages are installed, lets extract the data.</p>
+<pre class="r"><code>query&lt;-&quot;SELECT name,HR FROM Teams WHERE yearID=1980 ORDER BY HR &quot;
+result&lt;-sqldf(query)
+
+result$name&lt;-factor(result$name,levels=result$name)</code></pre>
+<p>After that is done, it is time to visualize the data with a bar plot.</p>
+<pre class="r"><code>ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat=&#39;identity&#39;,
+           color=&#39;blue&#39;,fill=&#39;black&#39;)+
+  coord_flip()+
+  xlab(&quot;Team Name&quot;)+
+  ylab(&quot;Homeruns&quot;)+
+  ggtitle(&quot;1980 Team Homerun Distribution&quot;)</code></pre>
+<p><img src="/post/2017-12-14-bar-plot_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>There you have it!</p>

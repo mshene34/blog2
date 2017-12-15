@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Time Series on Mike Sheneman&#39;s Blog</title>
+    <link>/tags/time-series/</link>
+    <description>Recent content in Time Series on Mike Sheneman&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
+    <lastBuildDate>Thu, 14 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/time-series/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Time Series</title>
+      <link>/post/time-series/</link>
+      <pubDate>Thu, 14 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/time-series/</guid>
+      <description>Hello all! Let’s make a time series plot by looking at Babe Ruth’s homeruns over his twenty-two seasons. First, install the following packages in R-Studio.
+library(Lahman) library(sqldf) library(devtools) library(ggplot2) After the packages are installed, it is time to extract the data with an sql request.
+query&amp;lt;-&amp;quot;SELECT yearID,HR FROM Batting WHERE playerID=&amp;#39;ruthba01&amp;#39;&amp;quot; result&amp;lt;-sqldf(query) After the data is extracted, it is time to visualize the data.
+ggplot()+ geom_point(data=result,aes(x=yearID,y=HR),color=&amp;quot;black&amp;quot;)+ geom_line(data=result,aes(x=yearID,y=HR),color=&amp;quot;blue&amp;quot;)+ ggtitle(&amp;quot;Ruth&amp;#39;s Homerun Totals Through the Years&amp;quot;)+ xlab(&amp;quot;Year&amp;quot;)+ ylab(&amp;quot;Homeruns&amp;quot;) There you have it!</description>
+    </item>
+    
+  </channel>
+</rss>

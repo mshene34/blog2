@@ -1,0 +1,39 @@
+---
+title: Time Series
+author: Mike
+date: '2017-12-14'
+slug: time-series
+categories:
+  - R
+tags:
+  - Time Series
+---
+
+Hello all! Let's make a time series plot by looking at Babe Ruth’s homeruns over his twenty-two seasons. First, install the following packages in R-Studio.
+
+```{r message=FALSE, warning=FALSE}
+library(Lahman)
+library(sqldf)
+library(devtools)
+library(ggplot2)
+```
+
+After the packages are installed, it is time to extract the data with an sql request.
+
+```{r message=FALSE, warning=FALSE}
+query<-"SELECT yearID,HR FROM Batting WHERE playerID='ruthba01'"
+result<-sqldf(query)
+```
+
+After the data is extracted, it is time to visualize the data.
+
+```{r message=FALSE, warning=FALSE}
+ggplot()+
+  geom_point(data=result,aes(x=yearID,y=HR),color="black")+
+  geom_line(data=result,aes(x=yearID,y=HR),color="blue")+
+  ggtitle("Ruth's Homerun Totals Through the Years")+
+  xlab("Year")+
+  ylab("Homeruns")
+```
+
+There you have it! Babe Ruth's homeruns over the years by a time series!
