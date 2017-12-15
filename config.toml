@@ -17,7 +17,7 @@ theme = "hugo-minimalist-theme"
     site_description = "Quick R tutorials."
     location = "Mercyhurst University"
     # Link custom assets relative to /static
-    avatar = "img/IMG_9296"
+    avatar = "img/IMG_9296.jpg"
     header_background = "img/cleveland.jpg"
     header_title = "Data Science Blog"
     copyright = "Powered by [Hugo](http://gohugo.io)."
